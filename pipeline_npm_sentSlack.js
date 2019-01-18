@@ -19,11 +19,9 @@ pipeline {
     }
     stage('deploy') {
       steps {
-        sh '''cp -r $JENKINS_HOME/workspace/build_package $JENKINS_HOME/workspace/volume-montado/build_package_deploy
-
-rm -rf $JENKINS_HOME/workspace/volume-montado/package_em_prod
-
-mv $JENKINS_HOME/workspace/volume-montado/build_package_deploy $JENKINS_HOME/workspace/volume-montado/package_em_prod'''
+        sh '''cp -r $JENKINS_HOME/workspace/build_package $JENKINS_HOME/workspace/volume-montado/build_package_deploy \
+             rm -rf $JENKINS_HOME/workspace/volume-montado/package_em_prod \
+             mv $JENKINS_HOME/workspace/volume-montado/build_package_deploy $JENKINS_HOME/workspace/volume-montado/package_em_prod'''
       }
     }
   }
